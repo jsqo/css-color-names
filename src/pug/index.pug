@@ -1,0 +1,22 @@
+doctype html
+html
+	head
+		title CSS color names
+		link(rel='stylesheet', href="main.css")
+	body
+		- const fs = require("fs");
+		- const colors_json = JSON.parse(fs.readFileSync("data/colors.json"));
+		- const colors = colors_json.colors;
+		content
+			div.colors
+				each color, index in colors
+					if index > 0 && index % 10 == 0
+						div.break
+					div.colorbox
+						div.name
+							code= color.name
+						div.color(style="background-color: "+color.color)
+						div.hex
+							code= color.color
+
+
