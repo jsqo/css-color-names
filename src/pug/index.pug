@@ -8,19 +8,26 @@ html
 		| <script>window.dataLayer = window.dataLayer || []; function gtag(){dataLayer.push(arguments);} gtag('js', new Date()); gtag('config', 'G-7VFZKZLYZ7');</script>
 
 	body
+		header
+			div.heading
+				h1 CSS color names
 		- const fs = require("fs");
 		- const colors_json = JSON.parse(fs.readFileSync("docs/data/colors.json"));
 		- const colors = colors_json.colors;
-		content
+		main
 			div.colors
 				each color, index in colors
 					if index > 0 && index % 10 == 0
 						div.break
 					div.colorbox
+						div.index Color ##{index+1}
 						div.name
 							code= color.name
 						div.color(style="background-color: "+color.color)
 						div.hex
 							code= color.color
+		footer
+			div.copyright
+				h4 &copy; Copyright 2022, Ankur Seth.
 
 
