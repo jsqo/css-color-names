@@ -1,27 +1,4 @@
 
-body {
-	margin: 0;
-	font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 
-		'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', 
-		'Fira Sans', 'Droid Sans', 'Helvetica Neue', sans-serif;
-	-webkit-font-smoothing: antialiased;
-	-moz-osx-font-smoothing: grayscale;
-	background-color: #eee;
-}
-
-code {
-	font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-	monospace;
-}
-
-header, footer {
-	padding: 40px 20px;
-	background-color: rebeccapurple;
-	color: #fff;
-	text-align: center;
-}
-
-
 main {
 	$bc: #ccc;
 	$b-gap: 48px;
@@ -31,24 +8,16 @@ main {
 }
 
 div.colors {
-	text-align: center;
-	padding: 50px 20px;
 	& > div.break {
 		height: 40px;
 		width: 50%;
-		margin: 40px auto;
-		margin-bottom: 120px;
 		background-color: #ccc;
 		border: 2px solid #aaa;
 	}
 }
 
 div.colorbox {
-	position: relative;
-	display: inline-block;
 	width: 240px;
-	margin: 40px 10px;
-	padding: 4px 0px;
 	border: 2px solid rebeccapurple;
 	background-color: #fff;
 	& > div.index {
@@ -62,23 +31,10 @@ div.colorbox {
 		left: -2px;
 		transform: translateY(-100%);
 	}
-	& > div.name, & > div.hex {
-		padding: 12px 10px;
-		& > code {
-			display: inline-block;
-			background-color: #eee;
-			padding: 5px 10px;
-			//font-weight: bold;
-		}
-	}
 }
 
 div.colorbox > div.color {
 	height: 120px;
 	border: 0px solid rebeccapurple;
 	border-width: 2px 0px;
-}
-
-div.colorbox > div.hex {
-	text-align: center;
 }
