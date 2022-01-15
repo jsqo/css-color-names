@@ -13,20 +13,21 @@ html
 	body.text-center
 		header.bg-purple-700.text-white.p-4
 			div.heading
-				h1.text-4xl.py-12 CSS color names
+				h1.text-2xl.py-4 CSS color names
 		- const fs = require("fs");
 		- const colors_json = JSON.parse(fs.readFileSync("docs/data/colors.json"));
 		- const colors = colors_json.colors;
-		main
+		main.bg-slate-200
 			div.colors.p-20
 				each color, index in colors
 					if index > 0 && index % 10 == 0
-						div.break.m-auto.mt-12.mb-24
-					div.colorbox.relative.inline-block.mx-4.my-12.py-1
-						div.index Color ##{index+1}
+						div.break.m-auto.mt-12.mb-24.h-12.max-w-xl.bg-slate-300
+					div.colorbox.relative.inline-block.mx-4.mt-12.mb-20.py-1.w-56.bg-white
+						div.index.absolute.top-0.-translate-y-full
+							div.px-4.py-2.bg-red-400.text-white.font-bold.text-sm Color ##{index+1}
 						div.name.inline-block.p-3
 							code.p-2= color.name
-						div.color(style="background-color: "+color.color)
+						div.color(style="background-color: "+color.color).h-40.border-y-2.border-slate-200
 						div.hex.p-3
 							code.bg-slate-300.inline-block.py-2.px-4= color.color
 		footer.bg-purple-700.text-white.p-4
