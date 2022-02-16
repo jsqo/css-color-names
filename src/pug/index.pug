@@ -13,25 +13,26 @@ html
 	body.text-center
 		header.bg-purple-700.text-white.p-4
 			div.heading
-				h1.text-2xl.py-4 CSS color names
+				h1.font-bold.text-xl.py-4 jsqo | CSS color names
 		- const fs = require("fs");
 		- const colors_json = JSON.parse(fs.readFileSync("docs/data/colors.json"));
 		- const colors = colors_json.colors;
-		main.bg-slate-200
+		main.bg-slate-300
 			div.colors.p-20
 				each color, index in colors
 					if index > 0 && index % 10 == 0
 						div.break.m-auto.mt-12.mb-24.h-12.max-w-xl.bg-slate-300
-					div.colorbox.relative.inline-block.mx-4.mt-12.mb-20.py-1.w-56.bg-white
+					div.colorbox.relative.inline-block.mx-4.mt-12.mb-20.py-1.w-56.bg-white.shadow.rounded
 						div.index.absolute.top-0.-translate-y-full
 							div.px-4.py-2.bg-red-400.text-white.font-bold.text-sm Color ##{index+1}
-						div.name.inline-block.p-3
+						div.name.inline-block.px-2.py-2
 							code.p-2= color.name
-						div.color(style="background-color: "+color.color).h-40.border-y-2.border-slate-200
-						div.hex.p-3
-							code.bg-slate-300.inline-block.py-2.px-4= color.color
-		footer.bg-purple-700.text-white.p-4
+						div.color(style="background-color: "+color.color).h-32.border-y-2.border-slate-200
+						div.hex.px-2.py-2
+							code.bg-slate-300.inline-block.py-2.px-2= color.color
+		footer.bg-slate-800.text-white.px-4.py-16
+			- const linkClasses = "font-bold border-b-2 border-blue-500 duration-300 pb-1 text-blue-500 hover:text-blue-300 hover:border-blue-300";
 			div.copyright
-				h4.text-xl.py-16 &copy; Copyright 2022, Ankur Seth.
+				h4.font-bold.text-base.py-12 &copy; Created by #[a(href="https://github.com/iaseth" class=linkClasses) Ankur Seth]. Hosted on #[a(href="https://github.com/jsqo/css-color-names" class=linkClasses) GitHub]
 
 
